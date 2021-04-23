@@ -18,41 +18,59 @@ $(() => {
 
     const getPokeData = async (input) => {
 
-        // async await to get data
-        const res1 = await fetch(`https://pokeapi.co/api/v2/pokemon/${input}`);
-        const res2 = await fetch("https://pokeapi.co/api/v2/type");
-
-        // change response object to json format
-        const data = await res1.json();
-        const typesInfo = await res2.json();
-
+        
         try {
+            // async await to get data
+            const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${input}`);
+    
+            // change response object to json format
+            const data = await res.json();
             // console.log(data);
-            // console.log(typesInfo);
 
             $("#pokeName").html(data.forms[0].name);
-
-            const dataType = data.types[0].type.name;
-            $("#pokeType").html(dataType);
-
             $("#pokeNo").html(data.id);
 
+            // add image to sprite container
             const sprite = data.sprites.other["official-artwork"].front_default;
 
-            // add image to sprite container
-            $(".sprites").html(`<img src=${sprite} class="pokeImages">`);
+            // remove element with class pokeImages and add back
+            $(".pokeImages").remove();
+            $(".sprites").append(`<img src=${sprite} class="pokeImages">`);
 
-            // remove all classes in children
-            $(".sprites").children().removeClass();
+            // remove classes from bottomright and topleft and replace with original class
+            $(".triangle-topleft").attr("class", "triangle-topleft");
+            $(".triangle-bottomright").attr("class", "triangle-bottomright");
 
-            // add classes to image based on type
-            $(".sprites").children().addClass(`pokeImages ${dataType}`);
 
+            // clear text inside pokeType
+            $("#pokeType").html("");
+
+            // get list of types for the pokemon
+            const dataTypes = []
+            for (index = 0; index < data.types.length; index++){
+                dataTypes.push(data.types[index].type.name)
+            }
+
+            for (index = 0; index < dataTypes.length; index++){
+                // add text
+                $("#pokeType").append(dataTypes[index] + " ");
+
+                // if pokemon has more than 1 type, add second class to right corner
+                // if (index % data.types.length === 0){
+                    $(".left-corner").children().addClass(`${dataTypes[index]}`);
+                    $(".right-corner").children().addClass(`${dataTypes[index]}`);
+                // }
+
+                if (index === 1){
+                    $(".right-corner").children().attr("class", `triangle-bottomright ${dataTypes[index]}`);
+                }
+              
+            }
+         
         }
-        catch {
-            console.log("404 error");
+
+        catch (error) {
+            console.log(error);
         }
     }
-
-
 })
