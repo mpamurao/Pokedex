@@ -1,9 +1,6 @@
 // document.ready
 $(() => {
 
-    // pokeName
-    // pokeType
-    // pokeNo
     // onclick functionf or submit
     $("form").on("submit", (event) => {
 
@@ -27,26 +24,31 @@ $(() => {
 
         // change response object to json format
         const data = await res1.json();
-        const types = await res2.json();
+        const typesInfo = await res2.json();
 
         try {
             console.log(data);
-            console.log(types);
+            console.log(typesInfo);
 
-            const pokeName = $("#pokeName").html(data.forms[0].name);
+            const dataName = data.forms[0].name;
+            $("#pokeName").html(dataName);
 
-            const dataType = data.types[0].type.name
-            const pokeType = $("#pokeType").html(dataType);
-            const pokeNo = $("#pokeNo").html(data.id);
+            const dataType = data.types[0].type.name;
+            $("#pokeType").html(dataType);
+
+            const dataNo = data.id;
+            $("#pokeNo").html(dataNo);
+
 
             // get an array of types
-            typesArray = types.results.map((index) => {
-                return index.name;
+            pokeTypes = typesInfo.results.map((type) => {
+                return type.name;
             })
-            console.log(typesArray)
+
+            console.log(pokeTypes)
 
             // change headerContainer based on type
-            if (typesArray.includes(dataType)){
+            if (pokeTypes.includes(dataType)){
                 console.log("match")
             }
     

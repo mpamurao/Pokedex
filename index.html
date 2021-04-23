@@ -16,19 +16,29 @@
 <body>
     <div class="headerContainer">
         <div class="title">
-            <h1>PokeDex</h1>
+            <h1>Pokédex</h1>
         </div>
     </div>
 
     <div class="info">
-        <h3>Pokemon Name: <span id="pokeName"></span></h3>
-        <h3>Pokemon Type: <span id="pokeType"></span></h3>
-        <h3>Pokemon No: <span id="pokeNo"></span></h3>
+        <div class="poke-info">
+            <h3>
+                Pokemon Name: <span id="pokeName"></span>
+            </h3>
+            <h3>
+                Pokemon Type: <span id="pokeType"></span>
+            </h3>
+            <h3>
+                Pokemon No: <span id="pokeNo"></span>
+            </h3>
+        
+            <br>
+            <form action="">
+                <input type="text" placeholder="Enter Pokemon name or no.">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
     </div>
 
-    <form action="">
-        <input type="text" placeholder="Enter Pokemon name here">
-        <input type="submit" value="Submit">
-    </form>
 </body>
 </html>
