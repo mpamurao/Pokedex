@@ -6,8 +6,8 @@ body{
     display:flex;
     flex-flow: column nowrap;
     align-items: center;
-
 }
+
 .headerContainer{
     /* border:1px solid black; */
     background-color: #c00c0c;
@@ -20,6 +20,10 @@ body{
     text-shadow: 1px 3px 3px black;
     color:whitesmoke;
     box-shadow: 0px 3px 5px 3px black;
+    z-index:0;
+}
+h1{
+    font-size: 3vw;
 }
 
 .info{
@@ -28,8 +32,6 @@ body{
     height:20vw;
     display: flex;
     flex-flow: row nowrap;
-    margin:0;
-
 }
 
 .poke-info{
@@ -37,96 +39,107 @@ body{
     width:50%;
     padding:2% 0% 0% 2%;
     box-shadow: 2px 2px 1px black;
+    z-index:1
+}
+h3{
+    font-size:1.5vw;
 }
 
 input[type=text]{
     width:48%;
 }
+
 .sprites{
-    /* border:1px solid blue; */
+    box-shadow: 2px 2px 1px black;
     background-color: inherit;
     width:50%;
     height:20vw;
 }
+
+.pokeImages{
+    /* border:1px solid orange; */
+    width:100%;
+    height:100%;
+}
 .normal{
-    background-color: #aab09f;
+    background-color: #a8a878;
 }
 
 .fighting{
-    background-color: #CB5F48;
+    background-color: #c03028;
 }
 
 .flying{
-    background-color: #7DA6DE;
+    background-color: #a890f0;
 }
 
 .poison{
-    background-color: #B468B7;
+    background-color: #a040a0;
 }
 
 .ground{
-    background-color: #CC9F4F;
+    background-color: #e0c068;
 }
 
 .rock{
-    background-color: #B2A061;
+    background-color: #b8a038;
 }
 
 .bug{
-    background-color: #94BC4A;
+    background-color: #a8b820;
 }
 
 .ghost{
-    background-color: #846AB6;
+    background-color: #705898;
 }
 
 .steel{
-    background-color: #89A1B0;
+    background-color: #b8b8d0;
 }
 
 .fire{
-    background-color: #EA7A3C;
+    background-color: #f08030;
 }
 
 .water{
-    background-color: #539AE2;
+    background-color: #6890f0;
 }
 
 .grass{
-    background-color: #71C558;
+    background-color: #78c850;
 }
 
 .electric{
-    background-color: #E5C531;
+    background-color: #f8d030;
 }
 
 .psychic{
-    background-color: #E5709B;
+    background-color: #f85888;
 }
 
 .ice{
-    background-color: #70CBD4;
+    background-color: #98d8d8;
 }
 
 .dragon{
-    background-color: #70CBD4;
+    background-color: #7038f8;
 }
 
 .dark{
-    background-color: #736C75;
+    background-color: #705848;
 }
 
 .fairy{
-    background-color: #E397D1;
+    background-color: #ee99ac;
 }
 
 .unknown{
-    background-color: skyblue;
+    background-color: #68a090;
 }
 
 .shadow{
-    background-color: skyblue;
+    background-color: #604e82;
 }
 
 
-/* pokeColordex: http://www.pokemonaaah.net/artsyfartsy/colordex/ */
+/* pokeColordex: https://bulbapedia.bulbagarden.net/wiki/%3F%3F%3F_(type) */

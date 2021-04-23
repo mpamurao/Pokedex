@@ -27,31 +27,27 @@ $(() => {
         const typesInfo = await res2.json();
 
         try {
-            console.log(data);
-            console.log(typesInfo);
+            // console.log(data);
+            // console.log(typesInfo);
 
-            const dataName = data.forms[0].name;
-            $("#pokeName").html(dataName);
+            $("#pokeName").html(data.forms[0].name);
 
             const dataType = data.types[0].type.name;
             $("#pokeType").html(dataType);
 
-            const dataNo = data.id;
-            $("#pokeNo").html(dataNo);
+            $("#pokeNo").html(data.id);
 
+            const sprite = data.sprites.other["official-artwork"].front_default;
 
-            // get an array of types
-            pokeTypes = typesInfo.results.map((type) => {
-                return type.name;
-            })
+            // add image to sprite container
+            $(".sprites").html(`<img src=${sprite} class="pokeImages">`);
 
-            console.log(pokeTypes)
+            // remove all classes in children
+            $(".sprites").children().removeClass();
 
-            // change headerContainer based on type
-            if (pokeTypes.includes(dataType)){
-                console.log("match")
-            }
-    
+            // add classes to image based on type
+            $(".sprites").children().addClass(`pokeImages ${dataType}`);
+
         }
         catch {
             console.log("404 error");
