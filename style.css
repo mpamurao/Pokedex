@@ -13,7 +13,7 @@ body{
     /* border:1px solid black; */
     background-color: #c00c0c;
     width: 50vw;
-    height:20vh;
+    height:20%;
     margin:0;
     display: flex;
     justify-content: center;
@@ -39,17 +39,31 @@ h1{
 .poke-info{
     /* border:1px solid green; */
     width:50%;
-    padding:2% 0% 0% 2%;
+    padding:2% 2% 0% 2%;
     box-shadow: 2px 2px 1px black;
     position: relative;
     z-index:1;
 }
 h3{
-    font-size:1.5vw;
+    font-size:1.23vw;
+    padding:3% 2% 2% 2%;
+    margin:0;
+}
+span{
+    font-weight:normal;
+    font-size:1.2vw;
 }
 
+form{
+    width:100%;
+    padding:1% 1% 2% 2%;
+}
 input[type=text]{
     width:48%;
+    font-size:0.92vw;
+}
+input[type=submit]{
+    font-size: 0.92vw;
 }
 
 .sprites{
@@ -61,10 +75,13 @@ input[type=text]{
     flex-flow:row nowrap;
     position: relative;
     z-index: 0;
+    font-size:1vw;
 }
 
+/*triangles - https://css-tricks.com/snippets/css/css-triangle/ */
+
 .left-corner{
-    border:2px solid purple;
+    /* border:2px solid purple; */
     width:50%;
     display:flex;
     justify-content: flex-start;
@@ -73,20 +90,20 @@ input[type=text]{
     width:0;
     height:0;
     align-items: center;
-    border-top: 100px solid transparent;
-    border-right: 100px solid white;
+    border-top: 7em solid transparent;
+    border-right: 7em solid white;
 }
 
 .right-corner{
-    border:1px solid orange;
+    /* border:1px solid orange; */
     width:50%;
     display: flex;
     justify-content: flex-end;
 }
 .triangle-bottomright{
     width:0;
-    border-bottom: 100px solid transparent;
-    border-left: 100px solid white;
+    border-bottom: 7em solid transparent;
+    border-left: 7em solid white;
 }
 
 .pokeImages{
