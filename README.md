@@ -1,5 +1,7 @@
 # Pokedex
 
+Hosted on Github Pages: https://mpamurao.github.io/Pokedex/
+
 Created a Pokedex using data from the PokeAPI (https://pokeapi.co/)
 
 Information inside the Pokedex include:
